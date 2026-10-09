@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In lịch</title>
+
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            background-image: url('anh/b12/Nen.gif');
+            background-repeat: repeat;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .main-container{
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction:column;
+            gap: 25px;
+        }
+
+        .calendar-card{
+            background-color: #FFFFFF;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .cal-year{
+            color: #C62828;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .cal-month{
+            color:#1565C0;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cal-day-number{
+            color: #C62828;
+            font-size: 52px;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .cal-weekday{
+            color:#1565C0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .greeting{
+            color: #C62828;
+            font-style: italic;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .form-section{
+            background-color: #FFFFFF;
+            border: 2px solid #1565C0;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(21, 101, 192, 0.1);
+        }
+
+        .input-group{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .input-group label{
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #1565C0;
+        }
+
+        .btn-print {
+            background-color: #455a64;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            align-self: flex-end;
+        }
+
+        .btn-print:hover {
+            background-color: #37474f;
+        }
+    </style>
+</head>
+<body>
+    <div class ="main-container">
+        <div class="calendar-card">
+            <div id="displayYear" class="cal-year">2026</div>
+            <div id="displayMonth" class="cal-month">Tháng 12</div>
+            <div id="displayDayNumber" class="cal-day-number">24</div>
+            <div id="displayWeekday" class="cal-weekday">Thứ hai</div>
+        </div>
+
+        <div id="displayGreeting" class="greeting">Chào buổi sáng</div>
+
+        <div class="form-section">
+            <div class="input-group">
+                <label for="inputDay">Ngày</label>
+                <input type="number" id="inputDay" value="24" min="1" max="31">
+            </div>
+            <div class="input-group">
+                <label for="inputMonth">Tháng</label>
+                <input type="number" id="inputMonth" value="12" min="1" max="12">
+            </div>
+            <div class="input-group">
+                <label for="inputYear">Năm</label>
+                <input type="number" id="inputYear" value="2026" min="1900" max="2100">
+            </div>
+            <button type="button" id="btnPrint" class="btn-print">In lịch</button>
+        </div>
+    </div>
+
+    <script>
+        const weekdays = ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"];
+
+        const inputDay = document.getElementById('inputDay');
+        const inputMonth = document.getElementById('inputMonth');
+        const inputYear = document.getElementById('inputYear');
+        const btnPrint = document.getElementById('btnPrint');
+
+        const displayYear = document.getElementById('displayYear');
+        const displayMonth = document.getElementById('displayMonth');
+        const displayDayNumber = document.getElementById('displayDayNumber');
+        const displayWeekday = document.getElementById('displayWeekday');
+        const displayGreeting = document.getElementById('displayGreeting');
+
+        function handlePrintCalendar() {
+            let d = parseInt(inputDay.value);
+            let m = parseInt(inputMonth.value);
+            let y = parseInt(inputYear.value);
+
+            let dateObj = new Date(y, m - 1, d);
+
+            if (isNaN(dateObj.getTime()) || dateObj.getDate() !== d || dateObj.getMonth() !== (m - 1)) {
+                alert("Ngày, tháng, năm bạn nhập không hợp lệ!");
+                return;
+            }
+
+            displayYear.textContent = y;
+            displayMonth.textContent = "Tháng " + m;
+            displayDayNumber.textContent = d;
+
+            let dayIndex = dateObj.getDay();
+            displayWeekday.textContent = weekdays[dayIndex];
+
+            let currentHour = new Date().getHours();
+            let greetingText = "";
+
+            if(currentHour >= 3 && currentHour < 12) {
+                greetingText = "Chào buổi sáng";
+            } else if(currentHour >= 12 && currentHour < 18) {
+                greetingText = "Chào buổi chiều";
+            } else {
+                greetingText = "Chào buổi tối";
+            }
+            displayGreeting.textContent = greetingText;
+        }
+
+        btnPrint.addEventListener('click', handlePrintCalendar);
+
+        window.addEventListener('load', handlePrintCalendar);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.banner {
+    background-color: #C62828;
+    background-image: url('Bai21/Nen_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.banner .logo {
+    height: 40px;
+    width: auto;
+}
+
+.banner h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 180px;
+    min-height: 450px;
+}
+
+.sidebar-menu {
+    background-color: #C62828;
+    border-right: 1px solid #a71d1d;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 12px 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.sidebar-menu li:hover a {
+    background-color: #8E0000;
+}
+
+.content-area {
+    padding: 25px;
+    background-color: #FFFFFF;
+}
+
+.content-title {
+    color: #C62828;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.submenu-box {
+    background-color: #FFE082;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.text-box {
+    border: 1px solid #e0e0e0;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    padding: 20px;
+    min-height: 150px;
+}
+
+.text-box p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.center-text {
+    text-align: center;
+    line-height: 1.6;
+    color: #1e293b !important;
+}
+
+.ads-column {
+    background-color: #fafaf9;
+    border-left: 1px solid #f1f5f9;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.ad-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+}
