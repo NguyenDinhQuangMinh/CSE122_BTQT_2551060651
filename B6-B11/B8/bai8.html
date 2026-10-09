@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang tin nhiều chuyên mục</title>
+    <style>
+        body{
+            margin:0 auto;
+            background-color: #cfd8e2;
+            padding: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .wrapper{
+            max-width:900px;
+            height: auto;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .tieu-de{
+            color:#1668C1;
+            font-size: 25px;
+            font-weight: bold;
+            border-bottom: solid 3px #1668C1;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding: 5px 20px;
+            
+        }
+        
+        .tieu-de-phu{
+            color:#949aa1;
+            font-size: 10px;
+            font-weight:bolder;
+            margin-bottom: 5px;
+        }
+
+        .custom-list{
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .normal-item{
+            color:#1668C1;
+            padding: 1px;
+            margin-right: -5px;
+        }
+
+        .chia-hai-cot{
+            display: flex;
+        }
+
+        .cot-trai{
+            background-color:#f1f4f6;
+            flex:1;
+            padding:15px;
+            border-right: 1px solid #cfd8e2;
+            margin-left: -20px;
+        }
+
+        .cot-phai{
+            flex:4;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .tieu-de-cp{
+            background-color:#1668C1;
+            color:#ffffff;
+            padding:5px;
+            border-radius:5px;
+        }
+
+        .heading3{
+            color:#1668C1;
+            font-size:17px;
+        }
+
+        .item-text{
+            flex: 1;
+        }
+
+        .item-img{
+            flex-shrink: 0;
+        }
+
+        .anh-ghep{
+            width:120px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .item-container{
+            display:flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .category-section {
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        .back-to-top {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .back-to-top a {
+            font-size: 12px;
+            color: #1668C1;
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        .back-to-top a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div id="top" class="tieu-de"> Ai? Cái gì? Ở đâu? ...</div>
+        <div class="chia-hai-cot"> 
+            <div class="cot-trai"> 
+                <div class="tieu-de-phu"> CHUYÊN MỤC</div>
+                <ul class="custom-list">
+                    <li class="normal-item"><a href="#tinh-yeu">Tình yêu và gia đình</a></li>
+                    <li class="normal-item"><a href="#suc-khoe">Sức khỏe</a></li>
+                    <li class="normal-item"><a href="#du-lich">Du lịch</a></li>
+                    <li class="normal-item"><a href="#am-thuc">Ẩm thực</a></li>
+                    <li class="normal-item"><a href="#am-nhac">Âm nhạc</a></li>
+                </ul>
+            </div>
+
+            <div class="cot-phai">
+                <div id="tinh-yeu" class="category-section">
+
+                <div class="tieu-de-cp">Tình yêu và gia đình</div>
+
+                    <div class="item-container">
+                        <div class="item-text">
+                            <h3 class="heading3">Trầu cau</h3>
+                            <p>Tình yêu là gì? Là ta yêu một người mỗi ngày trong một năm. Mỗi năm trong một đời người...</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="traucau.jpg" alt="Trầu cau">
+                        </div>
+                    </div>
+                
+                    <div class="item-container">
+                        <div class="item-text">
+                            <h3 class="heading3">Xây dựng hạnh phúc gia đình qua những bữa cơm hàng ngày</h3>
+                            <p>Nói đến hạnh phúc gia đình chúng ta thường mô tả bằng những từ thật đẹp đẽ và được thể hiện qua những giá trị dạo đức đáng trân trọng...</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="comtrua.jpg" alt="Bữa cơm trưa gia đình">
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#top">▲ Về đầu trang</a>
+                    </div>
+                </div>
+
+
+                <div id="suc-khoe" class="category-section">
+                    <div class="tieu-de-cp">Sức khỏe</div>
+
+                    <div class="item-container">
+                        <div class="item-text">
+                            <h3 class="heading3">10 lời khuyên trong dinh dưỡng</h3>
+                            <p>Cơ thể chúng ta cần nhiều chất dinh dưỡng từ nhiều nguồn lương thực khác nhau...</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="Suc_khoe_03.jpg" alt="Hoa quả">
+                        </div>
+                    </div>
+                
+                    <div class="item-container">
+                        <div class="item-text">
+                            <h3 class="heading3">Làm sao để bỏ thuốc lá?</h3>
+                            <p>Sức khỏe của chính bạn. Không hút thuốc lá tức là giảm thiểu đáng kể rủi ro mắc các bệnh ung thư...</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="nosmoke.jpg" alt="no smoking">
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#top">▲ Về đầu trang</a>
+                    </div>
+                </div>
+
+                <div id="am-thuc" class="category-section">
+                    <div class="tieu-de-cp">Ẩm thực</div>
+                
+                    <div class="item-container">
+                        <div class="item-text">
+                            <h3 class="heading3">Các món ăn dân dã</h3>
+                            <p>Các món ăn mới trong tuần - Chuyên mục dạy nấu ăn - Món ngon Hà Nội - Các món ăn dân dã ở miền Tây.</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="Am_thuc.jpg" alt="Nồi lẩu siêu ngon mlem mlem">
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#top">▲ Về đầu trang</a>
+                    </div>
+                </div>
+
+                <div id="am-nhac" class="category-section">
+                    <div class="tieu-de-cp">Âm nhạc</div>
+
+                    <div class="item-container">
+                        <div class="item-text">
+                            <h3 class="heading3">Nhạc thiếu nhi</h3>
+                            <p>Nắng sân trường - Mẹ yêu không nào - Ba bà đi bán lợn con.</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="nhac_thieu_nhi.jpg" alt="Nhạc thiếu nhi">
+                        </div>
+                    </div>
+
+                    <h3 class="heading3">Dân ca</h3>
+
+                    <div class="item-container">
+                        <div class="item-text">
+                            <p>Bèo dạt mây trôi - Mười thương - Lý cây bông.</p>
+                        </div>
+                        <div class="item-img">
+                            <img class="anh-ghep" src="Nhac_dan_ca.jpg" alt="Nhạc dân ca">
+                        </div>
+                    </div>
+                    <div class="back-to-top">
+                        <a href="#top">▲ Về đầu trang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

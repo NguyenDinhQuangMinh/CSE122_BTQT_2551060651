@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang hồ sơ cá nhân (CV)</title>
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            background-color: #f0f2f5;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box; 
+        }
+
+        .CV-card{
+            display:flex;
+            width: 850px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(180, 50, 50, 0.15);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .chia-hai-cot{
+            display:flex;
+        }
+
+        .cot-trai{
+            width: 280px;
+            background: linear-gradient(135deg, #1565C0, #0d3f7a);
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar{
+            width: 100px;
+            height: 100px;
+            background-color: #FFFFFF;
+            color: #1565C0;
+            font-size: 32px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .ho-ten{
+            font-size: 20px;
+            margin: 0 0 5px 0;
+        }
+
+        .mieu-ta{
+            font-size: 13px;
+            margin: 0 0 30px 0;
+        }
+
+        .contact-info{
+            list-style-type: none;
+            width: 100%;
+            text-align: left;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px; 
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .cot-phai{
+            flex: 1;
+            padding: 30px 40px;
+            box-sizing: border-box;
+        }
+
+        .tieu-de{
+            color: #1565C0;
+            font-size: 16px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .section-block {
+            margin-bottom: 25px;
+        }
+
+        .section-block p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .bang-ky-nang{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill{
+            background-color: #e3f0ff;
+            color: #0d3f7a;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .link-lk{
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .links-lk a {
+            color: #1565C0;
+            text-decoration: none;
+        }
+
+        .links-lk a:hover {
+            text-decoration: underline;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="CV-card">
+        <div class="chia-hai-cot">
+            <div class="cot-trai">
+                <div class="avatar">NA</div>
+                <div class="ho-ten">Nguyễn Văn An</div>
+                <div class="mieu-ta">Sinh viên CNTT · K67</div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>✉</span>
+                        <a href="mailto:an.nv@tlu.edu.vn">an.nv@tlu.edu.vn</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>0987 654 321</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🏠</span>
+                        <span>Hà Nội</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span>
+                        <a href="https://github.com/annv" target="_blank">github.com/annv</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="cot-phai">
+
+                <div class="section-block">
+                    <div class="tieu-de">Giới thiệu</div>
+                    <p>Sinh viên năm 3 ngành Công nghệ thông tin, yêu thích lập trình web và thiết kế giao diện. Đang tìm cơ hội thực tập vị trí Front-end Developer.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="tieu-de">Kỹ năng</div>
+                    <div class="bang-ky-nang">
+                        <span class="skill">HTML5</span>
+                        <span class="skill">CSS3</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Bootstrap</span>
+                        <span class="skill">Git</span>
+                    </div>
+                </div>
+            
+                <div class="section-block">
+                    <div class="tieu-de">Học vấn</div>
+                    <p>2023 - nay: Trường Đại học Thủy Lợi (TLU), ngành Công nghệ thông tin.</p>
+                </div>
+
+                <div class="section-block">
+                    <div class="tieu-de">Liên kết</div>
+                    <div class="link-lk">
+                        <a href="#">Portfolio</a> <div>·</div>
+                        <a href="#">Facebook</a> <div>·</div>
+                        <a href="#">Linkedln</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

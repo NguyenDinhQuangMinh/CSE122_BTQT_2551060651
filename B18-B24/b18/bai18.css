@@ -1,0 +1,103 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+        }
+
+        /* Tiêu đề bài viết: màu #E65100, cỡ lớn */
+        h1.article-title {
+            color: #E65100;
+            font-size: 32px;
+            margin: 0 0 5px 0;
+        }
+
+        .article-subtitle {
+            color: #E65100;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* Khu vực nội dung bài viết */
+        .article-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* Ảnh hoa nổi bên phải, bo góc, viền màu cam */
+        .article-content img {
+            float: right;
+            width: 190px;
+            height: auto;
+            border-radius: 8px;
+            margin: 0 0 15px 20px;
+            border: 2px solid #E65100;
+            object-fit: cover;
+        }
+
+        /* Hiệu ứng chữ cái đầu lớn (drop cap) màu #E65100 */
+        .article-content p:first-of-type::first-letter {
+            font-size: 52px;
+            font-weight: bold;
+            color: #E65100;
+            float: left;
+            line-height: 0.8;
+            margin-right: 8px;
+            margin-top: 4px;
+        }
+
+        .article-content p {
+            margin: 0 0 15px 0;
+            text-align: justify;
+        }
+
+        /* Khối "Hương vị miền Nam": viền xanh #2E7D32, nền #f4fbf4 */
+        .flavor-box {
+            border: 2px solid #2E7D32;
+            background-color: #f4fbf4;
+            border-radius: 8px;
+            padding: 20px 25px;
+            clear: both;
+        }
+
+        /* Tiêu đề khối: in nghiêng màu xanh #2E7D32 */
+        .flavor-title {
+            color: #2E7D32;
+            font-style: italic;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        /* Danh sách chia 2 cột bằng columns: 2 */
+        .flavor-list {
+            margin: 0;
+            padding-left: 20px;
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+
+        .flavor-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #334155;
+            break-inside: avoid;
+        }

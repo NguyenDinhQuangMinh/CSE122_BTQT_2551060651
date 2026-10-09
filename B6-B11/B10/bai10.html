@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang liên hệ tương tác</title>
+    <style>
+        body{
+            font-family: Arial,sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .bo-cuc{
+            width: 100%;
+            max-width: 650px;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(180, 50, 50, 0.15);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .heading{
+            background-color: #0f766e;
+            color: #FFFFFF;
+            padding: 25px 30px;
+        }
+
+        .h1{
+            font-weight:bolder;
+            margin: 0 0 8px 0;
+            font-size: 22px;
+        }
+
+        .h2{
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .form-body {
+            padding: 30px;
+        }
+        
+        .form-row{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #334155;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+            background-color: #fff;
+            color: #1e293b;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0f766e;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .form-footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #334155;
+        }
+
+        .checkbox-group input {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit {
+            background-color: #0f766e;
+            color: #FFFFFF;
+        }
+
+        .btn-submit:hover {
+            background-color: #0f766e;
+        }
+
+        .btn-reset {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        .btn-reset:hover {
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="bo-cuc">
+        <div class="heading">
+            <div class="h1">Liên hệ với chúng tôi</div>
+            <div class="h2">Vui lòng điền thông tin bên dưới, chúng tôi sẽ phản hồi trong 24 giờ.</div>
+        </div>
+
+        <form class="form-body" action="#" method="POST">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullname">Họ và tên</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn...">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email của bạn...">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" id="phone" name="phone" placeholder="Nhận số điện thoại của bạn...">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Chủ đề</label>
+                    <select id="subject" name="subject">
+                        <option value="" disabled selected>Chọn chủ đề liên hệ</option>
+                        <option value="khoa-hoc">Hỏi về khóa học</option>
+                        <option value="ho-tro">Hỗ trợ kỹ thuật</option>
+                        <option value="khac">Ý kiến khác</option>
+                    </select> 
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="message">Nội dung</label>
+                <textarea id="message" name="message" rows="4" placeholder="Nhập nội dung bạn muốn gửi..."></textarea>
+            </div>
+
+            <div class="form-footer-row">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" name="agree">
+                    <label for="agree" style="margin-bottom: 0; font-weight: normal; cursor: pointer;">Tôi đồng ý nhận email phản hồi.</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-submit">Gửi liên hệ</button>
+                    <button type="reset" class="btn btn-reset">Nhập lại</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

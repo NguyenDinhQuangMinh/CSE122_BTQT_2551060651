@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính đơn giản (JavaScript)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .calculator {
+            background-color: #111827;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 360px;
+            box-sizing: border-box;
+        }
+
+        .display {
+            background-color: #022c22;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: right;
+            word-break: break-all;
+            word-wrap: break-word;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .previous-operand {
+            color: #9ca3af;
+            font-size: 16px;
+            min-height: 20px;
+        }
+
+        .current-operand {
+            color: #4ade80;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        button {
+            padding: 18px 0;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .btn-number {
+            background-color: #25313f;
+            color: #e5e7eb;
+        }
+
+        .btn-operator {
+            background-color: #0d6efd;
+            color: #FFFFFF;
+        }
+
+        .btn-clear {
+            background-color: #dc2626;
+            color: #FFFFFF;
+        }
+
+        .btn-equals {
+            background-color: #16a34a;
+            color: #FFFFFF;
+        }
+
+        .btn-special {
+            background-color: #1e3a8a;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div id="previous" class="previous-operand"></div>
+            <div id="current" class="current-operand">0</div>
+        </div>
+
+        <div class="buttons-grid">
+            <button class="btn-clear" onclick="clearDisplay()">C</button>
+            <button class="btn-special" onclick="appendCharacter('(')">(</button>
+            <button class="btn-special" onclick="appendCharacter(')')">)</button>
+            <button class="btn-operator" onclick="appendCharacter('/')">÷</button>
+
+            <button class="btn-number" onclick="appendCharacter('7')">7</button>
+            <button class="btn-number" onclick="appendCharacter('8')">8</button>
+            <button class="btn-number" onclick="appendCharacter('9')">9</button>
+            <button class="btn-operator" onclick="appendCharacter('*')">×</button>
+
+            <button class="btn-number" onclick="appendCharacter('4')">4</button>
+            <button class="btn-number" onclick="appendCharacter('5')">5</button>
+            <button class="btn-number" onclick="appendCharacter('6')">6</button>
+            <button class="btn-operator" onclick="appendCharacter('-')">-</button>
+
+            <button class="btn-number" onclick="appendCharacter('1')">1</button>
+            <button class="btn-number" onclick="appendCharacter('2')">2</button>
+            <button class="btn-number" onclick="appendCharacter('3')">3</button>
+            <button class="btn-operator" onclick="appendCharacter('+')">+</button>
+
+            <button class="btn-number" onclick="appendCharacter('0')" style="grid-column: span 2;">0</button>
+            <button class="btn-number" onclick="appendCharacter('.')">.</button>
+            <button class="btn-equals" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        const currentOperandScreen = document.getElementById('current');
+        const previousOperandScreen = document.getElementById('previous');
+        let currentInput = '0';
+        let previousInput = '';
+
+        function appendCharacter(char) {
+            if (currentInput === '0' && char !== '.') {
+                currentInput = char;
+            } else {
+                currentInput += char;
+            }
+            updateScreen();
+        }
+
+        function clearDisplay() {
+            currentInput = '0';
+            previousInput = '';
+            updateScreen();
+        }
+
+        function calculate() {
+            try {
+                
+                let expression = currentInput.replace(/×/g, '*').replace(/÷/g, '/');
+                
+                previousInput = currentInput;
+                
+                let result = eval(expression);
+                
+                if (!Number.isInteger(result)) {
+                    result = parseFloat(result.toFixed(6));
+                }
+
+                currentInput = result.toString();
+                previousOperandScreen.textContent = previousInput;
+                currentOperandScreen.textContent = currentInput;
+            } catch (error) {
+                currentOperandScreen.textContent = 'Lỗi';
+                currentInput = '0';
+            }
+        }
+
+        function updateScreen() {
+            currentOperandScreen.textContent = currentInput;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang 6 kỳ quan thiên nhiên Việt Nam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .page-header {
+            background-color: #2E7D32;
+            color: #FFEB3B;
+            text-align: center;
+            padding: 15px 20px;
+            border-radius: 6px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .page-intro {
+            color: #1b5e20;
+            font-style: italic;
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .wonder-card {
+            background-color: #fdfdfd;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s;
+        }
+
+        .wonder-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .wonder-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border: 3px solid #2E7D32;
+            border-radius: 6px;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .wonder-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .wonder-content h3 {
+            color: #1b5e20;
+            font-size: 16px;
+            margin: 0 0 8px 0;
+            font-weight: bold;
+        }
+
+        .wonder-content p {
+            color: #475569;
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .wonder-card:nth-child(even) {
+            flex-direction: column-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            6 kỳ quan thiên nhiên Việt Nam
+        </div>
+
+        <div class="page-intro">
+            Việt Nam sở hữu nhiều kỳ quan thiên nhiên được thế giới công nhận — từ vịnh biển, hang động đến núi cao và miền sông nước.
+        </div>
+
+        <div class="grid-container">
+
+            <div class="wonder-card">
+                <img src="anh/1-vinh-ha-long.jpg" alt="Vịnh Hạ Long">
+                <div class="wonder-content">
+                    <h3>1. Vịnh Hạ Long</h3>
+                    <p>Gần 2.000 đảo đá vôi, Di sản thiên nhiên thế giới, thuộc Quảng Ninh.</p>
+                </div>
+            </div>
+
+            <div class="wonder-card">
+                <img src="anh/2-son-doong.jpg" alt="Hang Sơn Đoòng">
+                <div class="wonder-content">
+                    <h3>2. Hang Sơn Đoòng</h3>
+                    <p>Hang động tự nhiên lớn nhất thế giới, thuộc Quảng Bình.</p>
+                </div>
+            </div>
+
+            <div class="wonder-card">
+                <img src="anh/3-thac-ban-gioc.jpg" alt="Thác Bản Giốc">
+                <div class="wonder-content">
+                    <h3>3. Thác Bản Giốc</h3>
+                    <p>Thác nước đẹp nhất Việt Nam, nằm ở Cao Bằng.</p>
+                </div>
+            </div>
+
+            <div class="wonder-card">
+                <img src="anh/4-fansipan.jpg" alt="Fansipan">
+                <div class="wonder-content">
+                    <h3>4. Fansipan</h3>
+                    <p>"Mái nhà Đông Dương", cao 3.147 m, thuộc Lào Cai.</p>
+                </div>
+            </div>
+
+            <div class="wonder-card">
+                <img src="anh/5-mekong.jpg" alt="Đồng bằng sông Cửu Long">
+                <div class="wonder-content">
+                    <h3>5. Đồng bằng sông Cửu Long</h3>
+                    <p>Vựa lúa, miệt vườn sông nước trù phú miền Nam.</p>
+                </div>
+            </div>
+
+            <div class="wonder-card">
+                <img src="anh/6-phong-nha.jpg" alt="Động Phong Nha">
+                <div class="wonder-content">
+                    <h3>6. Động Phong Nha</h3>
+                    <p>Hệ thống hang động kỳ vĩ, Di sản thiên nhiên thế giới.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách việc cần làm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .todo-container {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .todo-header {
+            background-color: #6d28d9;
+            color: #FFFFFF;
+            padding: 25px 30px;
+        }
+
+        .todo-header h2 {
+            margin: 0 0 8px 0;
+            font-size: 22px;
+        }
+
+        .todo-header p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .todo-input-section {
+            padding: 25px 30px;
+            display: flex;
+            gap: 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .todo-input-section input {
+            flex-grow: 1;
+            padding: 12px 16px;
+            font-size: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .todo-input-section input:focus {
+            border-color: #6d28d9;
+        }
+
+        .todo-input-section button {
+            background-color: #6d28d9;
+            color: #FFFFFF;
+            border: none;
+            padding: 0 24px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .todo-input-section button:hover {
+            opacity: 0.9;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0 30px;
+            margin: 0;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px dashed #ede9fe;
+        }
+
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+
+        .todo-content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+        .todo-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #a78bfa;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+            pointer-events: none;
+        }
+
+        .todo-item.completed .todo-checkbox {
+            background-color: #6d28d9;
+            border-color: #6d28d9;
+        }
+
+        .todo-item.completed .todo-checkbox::after {
+            content: '✔';
+            color: #FFFFFF;
+            font-size: 12px;
+        }
+
+        .todo-text {
+            font-size: 15px;
+            color: #1e293b;
+            transition: color 0.2s;
+            pointer-events: none;
+        }
+
+        .todo-item.completed .todo-text {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+
+        .btn-delete {
+            background-color: #fde2e2;
+            color: #b91c1c;
+            border: none;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-delete:hover {
+            opacity: 0.8;
+        }
+
+        .todo-footer {
+            padding: 20px 30px;
+            background-color: #fafaf9;
+            border-top: 1px solid #f1f5f9;
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <div class="todo-header">
+            <h2>Danh sách việc cần làm</h2>
+            <p>Thêm việc mới, đánh dấu hoàn thành hoặc xóa - tất cả bằng JavaScript.</p>
+        </div>
+
+        <div class="todo-input-section">
+            <input type="text" id="todo-input" placeholder="Nhập việc mới...">
+            <button onclick="addTodo()">Thêm</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list">
+            <li class="todo-item completed">
+                <div class="todo-content-wrapper" onclick="toggleTodo(this)">
+                    <div class="todo-checkbox"></div>
+                    <span class="todo-text">Đọc chương HTML5 cơ bản</span>
+                </div>
+                <button class="btn-delete" onclick="deleteTodo(this)">Xóa</button>
+            </li>
+            <li class="todo-item">
+                <div class="todo-content-wrapper" onclick="toggleTodo(this)">
+                    <div class="todo-checkbox"></div>
+                    <span class="todo-text">Làm bài tập CSS Grid</span>
+                </div>
+                <button class="btn-delete" onclick="deleteTodo(this)">Xóa</button>
+            </li>
+            <li class="todo-item">
+                <div class="todo-content-wrapper" onclick="toggleTodo(this)">
+                    <div class="todo-checkbox"></div>
+                    <span class="todo-text">Quay video OBS nộp bài</span>
+                </div>
+                <button class="btn-delete" onclick="deleteTodo(this)">Xóa</button>
+            </li>
+        </ul>
+
+        <div id="todo-footer" class="todo-footer">
+            còn 2 việc chưa hoàn thành
+        </div>
+    </div>
+
+    <script>
+        function addTodo() {
+            const input = document.getElementById('todo-input');
+            const taskText = input.value.trim();
+
+            if (taskText === "") {
+                alert("Vui lòng nhập nội dung công việc!");
+                return;
+            }
+
+            const list = document.getElementById('todo-list');
+
+            const li = document.createElement('li');
+            li.className = 'todo-item';
+            li.innerHTML = `
+                <div class="todo-content-wrapper" onclick="toggleTodo(this)">
+                    <div class="todo-checkbox"></div>
+                    <span class="todo-text">${escapeHtml(taskText)}</span>
+                </div>
+                <button class="btn-delete" onclick="deleteTodo(this)">Xoá</button>
+            `;
+
+            list.appendChild(li);
+            input.value = "";
+            updateCounter();
+        }
+
+        function toggleTodo(element) {
+            const item = element.parentElement;
+            item.classList.toggle('completed');
+            updateCounter();
+        }
+
+        function deleteTodo(button) {
+            const item = button.parentElement;
+            item.remove();
+            updateCounter();
+        }
+
+        function updateCounter() {
+            const items = document.querySelectorAll('.todo-item');
+            let incompleteCount = 0;
+
+            items.forEach(item => {
+                if(!item.classList.contains('completed')){
+                    incompleteCount++;
+                }
+            });
+
+            const footer = document.getElementById('todo-footer');
+            footer.textContent = `còn ${incompleteCount} việc chưa hoàn thành`;
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;")
+                       .replace(/</g, "&lt;")
+                       .replace(/>/g, "&gt;")
+                       .replace(/"/g, "&quot;")
+                       .replace(/'/g, "&#039;");
+        }
+
+        updateCounter();
+    </script>
+
+</body>
+</html>

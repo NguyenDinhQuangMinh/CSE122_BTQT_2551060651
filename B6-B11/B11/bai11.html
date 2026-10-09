@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện ảnh</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .bo-cuc-bai{
+            width:100%;
+            max-width: 1000px;
+        }
+
+        .tieu-de{
+            text-align:center;
+            margin-bottom: 35px;
+            color: #e2e8f0;
+            font-size: 24px;
+            margin: 0 0 8px 0;
+            font-weight: bold;
+        }
+
+        .tieu-de-phu{
+            text-align:center;
+            margin-bottom: 35px;
+            color: #94a3b8;
+            font-size: 14px;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        .bo-cuc-anh{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .anh{
+            background-color: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .anh img{
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .anh figcaption{
+            color: #cbd5e1;
+            font-size: 13px;
+            padding: 12px 14px;
+        }
+
+        @media (max-width: 768px) {
+            .bo-cuc-anh {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bo-cuc-anh {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="bo-cuc-bai">
+        <div class="tieu-de">Thư viện ảnh Việt Nam</div>
+        <div class="tieu-de-phu">Bộ sưu tập 6 danh thắng tiêu biểu - minh họa thẻ figure / figcaption</div>
+        <div class="bo-cuc-anh">
+            <figure class="anh">
+                <img src="1-vinh-ha-long.jpg" alt="Vịnh Hạ Long">
+                <figcaption> Hình 1. Vịnh Hạ Long</figcaption>
+            </figure>
+
+            <figure class="anh">
+                <img src="2-son-doong.jpg" alt="Hang Sơn Đoòng">
+                <figcaption> Hình 2. Hang Sơn Đoòng</figcaption>
+            </figure>
+
+            <figure class="anh">
+                <img src="3-thac-ban-gioc.jpg" alt="Thác Bản Giốc">
+                <figcaption> Hình 3. Thác Bản Giốc</figcaption>
+            </figure>
+
+            <figure class="anh">
+                <img src="4-fansipan.jpg" alt="Fansipan">
+                <figcaption> Hình 4. Fansipan</figcaption>
+            </figure>
+
+            <figure class="anh">
+                <img src="5-mekong.jpg" alt="Đồng bằng sông Cửu Long">
+                <figcaption> Hình 5. Đồng bằng sông Cửu Long</figcaption>
+            </figure>
+
+            <figure class="anh">
+                <img src="6-phong-nha.jpg" alt="Động Phong Nha">
+                <figcaption> Hình 6. Động Phong Nha</figcaption>
+            </figure> 
+        </div>
+    </div>
+</body>
+</html>
